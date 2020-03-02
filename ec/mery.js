@@ -9,7 +9,8 @@
     })
     // 把配置文件挂载到windo对象下
     window.actionSnapConfig = {
-        title: '類似アイテム'
+        title: '類似アイテム',
+        gaId: 'UA-158934202-4'
     }
     //引入核心库
     function insertReact() {

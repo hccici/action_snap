@@ -6,7 +6,7 @@ import {getPrice} from '@commonMethods'
 function Slider(props) {
     const { list } = props
     const handleClick=(item)=>{
-        reportItemClick(item.price)
+        reportItemClick()
         window.open(item.url, '_blank')
     }
     return (

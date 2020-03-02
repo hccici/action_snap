@@ -1,26 +1,23 @@
 /* eslint-disable */
 import actionSnapGa from './ga.js'
 import { logReport } from './discovery.js'
+const gaId = window.actionSnapConfig.gaId
 // 功能显示上报
 const reportPageView = () => {
     logReport({
-        type: 'snap_pageview'
+        type: 'snap_pageView'
     })
-    actionSnapGa('event', 'click_item', {
-        'event_category': 'snap_click',
-        'event_label': '点击商品',
-        'value': '0'
+    actionSnapGa('event', 'page_view', {
+        'send_to': gaId
     })
 }
 // 商品点击上报
 const reportItemClick = (price) => {
     logReport({
-        type: "snapItem_click"
+        type: "snap_itemClick"
     })
     actionSnapGa('event', 'click_item', {
-        'event_category': 'snap_click',
-        'event_label': '点击商品',
-        'value': Number(price.split(' ')[0])
+        'send_to': gaId
     })
 }
 export {
