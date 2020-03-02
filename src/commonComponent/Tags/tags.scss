@@ -1,0 +1,20 @@
+.tags {
+    overflow-x: scroll;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 10px 0 10px;
+    font-size: 12px;
+    &::-webkit-scrollbar{display:none}
+    &-item {
+        padding: 6px 19px;
+        border-radius: 15px;
+        background: #f3f3f3;
+        margin-right: 5px;
+        font-weight: 800;
+        white-space: nowrap;
+        &_selected {
+            background: #e9d1aa;
+        }
+    }
+}

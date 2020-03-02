@@ -1,0 +1,45 @@
+$color: #000000;
+
+.title {
+    margin-top: 10px;
+    /*     border-bottom: 1px solid $color;*/
+    padding-left: 15px;
+    position: relative;
+    font-size: 16px;
+    color: $color;
+    text-align: left;
+    font-weight: 800;
+    line-height: 1.6em;
+
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-30%);
+        border: 6px solid transparent;
+        border-top: 10px solid $color;
+    }
+
+    &-logo {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 16px;
+        width: 125px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('./logo.png');
+
+        &-click {
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            left: 0;
+            top: 0;
+            color: transparent;
+        }
+    }
+}
