@@ -12,7 +12,7 @@ function Tags(props) {
         <div className={style['tags']}>
             {
                 list.map(((item,index)=>{
-                return <div key={item.category} onClick={()=>onTagSelect(index)} className={`${style['tags-item']} ${selectIndex==index?style['tags-item_selected']:''}`}>{item.category==='shoe'?'shoes':item.category}</div>
+                return <div key={item.category+index} onClick={()=>onTagSelect(index)} className={`${style['tags-item']} ${selectIndex==index?style['tags-item_selected']:''}`}>{item.category==='shoe'?'shoes':item.category}</div>
                 }))
             }
         </div>

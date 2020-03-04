@@ -17,8 +17,8 @@
         var bodyEl = document.querySelector('body');
         var scriptEl = document.createElement("script");
         scriptEl.type = "text/javascript";
-        scriptEl.src = "https://api.popin.cc/action_snap/action_snap.js"; //cdn
-        // scriptEl.src = "https://s3.amazonaws.com/api.popin.cc/action_snap/action_snap.js"; //直接访问
+        // scriptEl.src = "https://api.popin.cc/action_snap/action_snap.js"; //cdn
+        scriptEl.src = "https://s3.amazonaws.com/api.popin.cc/action_snap/action_snap.js"; //直接访问
         bodyEl.appendChild(scriptEl)
     }
     //请求数据
@@ -60,10 +60,24 @@
         }
     }
     var url = 'https://api-demo-action.popin.cc/test/api/snap/similar'
+    //获取地址栏参数
+    function getUrlSearch(name) {
+        if (!name) return null;
+        var after = window.location.search;
+        after = after.substr(1);
+        if (!after) return null;
+        if (after.indexOf(name) === -1) return null;
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+        var r = decodeURI(after).match(reg);
+        if (!r) return null;
+        return r[2];
+    }
+    var strategy=getUrlSearch('strategy')
     var data = {
-        link: location.origin+location.pathname,
+        link: location.origin + location.pathname,
         site: 'mery.jp',
         type: 'normal',
+        strategy: strategy||'mix.tokyo'//palcloset.jp ragtag.jp random
     }
     ajax({
         url: url,
