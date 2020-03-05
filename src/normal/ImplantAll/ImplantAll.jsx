@@ -3,15 +3,16 @@ import Title from '@common/Title/Title.jsx'
 import Tags from '@common/Tags/Tags.jsx'
 import Slider from '@common/Slider/Slider.jsx'
 function ImplantAll(props) {
-  const name=window.actionSnapConfig.title
+  const name = window.actionSnapConfig.title
   const data = props.data
+  const groupIndex = props.groupIndex
   //创建当前选择的state
   const [curSelect, setCurSelect] = useState(0)
-  const handleTagSelect=useCallback(index=>{
+  const handleTagSelect = useCallback(index => {
     setCurSelect(index)
-  },[])
+  }, [])
   return (
-    <div>
+    <div data-groupindex={groupIndex}>
       <Title name={name}></Title>
       <Tags list={data} selectIndex={curSelect} onTagSelect={handleTagSelect}></Tags>
       <Slider list={data[curSelect].items}></Slider>

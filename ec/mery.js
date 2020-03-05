@@ -17,8 +17,8 @@
         var bodyEl = document.querySelector('body');
         var scriptEl = document.createElement("script");
         scriptEl.type = "text/javascript";
-        // scriptEl.src = "https://api.popin.cc/action_snap/action_snap.js"; //cdn
-        scriptEl.src = "https://s3.amazonaws.com/api.popin.cc/action_snap/action_snap.js"; //直接访问
+        scriptEl.src = "https://api.popin.cc/action_snap/action_snap.js"; //cdn
+        // scriptEl.src = "https://s3.amazonaws.com/api.popin.cc/action_snap/action_snap.js"; //直接访问
         bodyEl.appendChild(scriptEl)
     }
     //请求数据

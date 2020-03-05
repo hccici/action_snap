@@ -20,7 +20,18 @@ const reportItemClick = (price) => {
         'send_to': gaId
     })
 }
+
+// 广告位曝光上报
+const reportItemIntersecting = (price) => {
+    logReport({
+        type: "snap_itemImp"
+    })
+    actionSnapGa('event', 'snap_itemImp', {
+        'send_to': gaId
+    })
+}
 export {
     reportPageView,
-    reportItemClick
+    reportItemClick,
+    reportItemIntersecting
 }
