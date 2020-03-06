@@ -1,11 +1,17 @@
 /* eslint-disable */
 (function () {
-    var portList = document.querySelectorAll('.x-content-area[data-item-type="Image"]')
+    var portList = document.querySelectorAll('.x-content-area picture')
     portList.forEach(function (item) {
         //为了匹配图片，使用图片src作为key值
         var src = item.querySelector('source:nth-child(2)').dataset.srcset
         src = src || ''
-        item.insertAdjacentHTML('beforeend', '<div class="action_snap_entry" data-key="' + src + '"></div>')
+        item=item.parentElement.parentElement
+        var snap='<div class="action_snap_entry" data-key="' + src + '"></div>'
+        var className=Array.prototype.slice.call(item.classList)[0]
+        if(className==="product"){
+            snap='<div class="action_snap_entry" style="padding: 10px" data-key="' + src + '"></div>'
+        }
+        item.insertAdjacentHTML('beforeend', snap)
     })
     // 把配置文件挂载到windo对象下
     window.actionSnapConfig = {
