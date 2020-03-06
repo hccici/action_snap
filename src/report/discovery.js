@@ -19,13 +19,12 @@ export function isMobile(ua) {
 
     return isMobile;
 }
+isMobile()
 export function logReport(logParams) {
     var url = encodeURIComponent(window.location.href);
     // var uid = uidModule.getId();
-    var source = logParams.source || '';
-    var type = logParams.type || '';
-    var device = isMobile() ? 'mobile' : 'pc';
-    var media = 'mery.jp';
+    var type = logParams.type ? (_device + '_' + logParams.type) : '';
+    var media = 'mery.jp_snap';
     var nowDate = new Date();
     var year = nowDate.getFullYear();
     var month = nowDate.getMonth() + 1 < 10 ? '0' + (nowDate.getMonth() + 1)
@@ -33,14 +32,8 @@ export function logReport(logParams) {
     var day = nowDate.getDate() < 10 ? '0' + nowDate.getDate() : String(nowDate
         .getDate());
     var t = year + month + day;
-    var r5 = '';
-    if (source) {
-        r5 = encodeURIComponent(device + '|' + source);
-    } else {
-        r5 = device;
-    }
     // var url = 'https://rlog.popin.cc/s.gif?url=' + url + ' &uid=' + uid + '&type=' + type + '&r5=' + r5 + '&r6=' + (+new Date()) + 'r' + Math.floor(Math.random() * 1000) + '&pid=' + media + '&t=' + t;
-    var url = 'https://rlog.popin.cc/s.gif?url=' + url + '&type=' + type + '&r5=' + r5 + '&r6=' + (+new Date()) + 'r' + Math.floor(Math.random() * 1000) + '&pid=' + media + '&t=' + t;
+    var url = 'https://rlog.popin.cc/s.gif?url=&uid=&type=' + type + '&media=' + media + '&t=' + t;
     var image = new Image();
     image.src = url;
 }
