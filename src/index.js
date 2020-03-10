@@ -16,7 +16,6 @@ if (window.actionSnapData) {
   })
 }
 function portListObserveCallback(entries) {
-  console.log(entries)
   if (entries[0].isIntersecting) {
     reportItemIntersecting()
     io.unobserve(entries[0].target)

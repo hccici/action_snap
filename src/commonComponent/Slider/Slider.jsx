@@ -13,15 +13,11 @@ function Slider(props) {
     const slider = useRef(null)
     useEffect(function () {
         if (isInView(slider.current)) {
-            console.log('已经加载')
             setLoad(true)
         } else {
-            console.log('添加监听')
             const doS = debounce(function () {
-                console.log('执行查询')
                 if (isInView(slider.current)) {
                     setLoad(true)
-                    console.log('移除监听')
                     window.removeEventListener('scroll', doS)
                 }
             }, 300)
@@ -36,7 +32,7 @@ function Slider(props) {
                         <div key={item.image_src} className={style['slider-item']} onClick={() => { handleClick(item, index) }}>
                             <img src={load ? item.image_src : placeholder} className={style['slider-item-img']}></img>
                             <div className={style['slider-item-title1']}>{item.site}</div>
-                            <div className={style['slider-item-title2']}>{getPrice(item.price)}</div>
+                            <div className={style['slider-item-title2']}>{'￥'+getPrice(item.price)}</div>
                         </div>
                     )
                 })
