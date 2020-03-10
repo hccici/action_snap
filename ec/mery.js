@@ -91,6 +91,7 @@
         success: function (resp) {
             if (resp.message.errMessage === 'success' && resp.content.length !== 0) {
                 window.actionSnapData = resp.content
+                window.ecSite_snap = resp.content[0].list[0].items[0].site
                 insertReact()
             }
         }

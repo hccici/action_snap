@@ -24,7 +24,7 @@ export function logReport(logParams) {
     var url = encodeURIComponent(window.location.href);
     // var uid = uidModule.getId();
     var type = logParams.type ? (_device + '_' + logParams.type) : '';
-    var media = 'mery.jp_snap';
+    var media = 'mery.jp_snap_' + window.ecSite_snap;
     var nowDate = new Date();
     var year = nowDate.getFullYear();
     var month = nowDate.getMonth() + 1 < 10 ? '0' + (nowDate.getMonth() + 1)
