@@ -1,12 +1,6 @@
 /* eslint-disable */
 (function () {
     /* 相关配置 */
-    // 渲染相关配置，挂载到windo对象下
-    window.actionSnapConfig = {
-        title: '類似アイテム',
-        gaId: 'UA-158934202-4'
-    }
-    // 请求相关配置
     var config = {
         dataUrl: 'https://api-demo-action.popin.cc/test/api/snap/similar',//数据请求baseUrl 
         // renderUrl: 'https://s3.amazonaws.com/api.popin.cc/action_snap/action_snap.js',// 渲染库url,直接访问aws
@@ -135,7 +129,6 @@
         success: function (resp) {
             if (resp.message.errMessage === 'success' && resp.content.length !== 0) {
                 window.actionSnapData = resp.content
-                window.ecSite_snap = resp.content[0].list[0].items[0].site
                 insertReact()
             }
         }
