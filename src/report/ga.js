@@ -1,6 +1,5 @@
 /* eslint-disable */
 export default (function insertGaScript() {
-    console.log('gtag import')
     const id = window.actionSnapConfig.gaId
     let actionSnapGa = null
     // 判断gtag是否存在，存在了就不用引入了

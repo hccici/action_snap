@@ -57,6 +57,8 @@ module.exports = {
             '@normal': path.resolve(__dirname, "src/normal"),
             '@report': path.resolve(__dirname, "src/report/report.js"),
             "@commonMethods":path.resolve(__dirname, "src/utils/commonMethods.js"),
+            "@media":path.resolve(__dirname, "src/media"),
+            "@image":path.resolve(__dirname, "src/asset/image")
         }
     },
 };

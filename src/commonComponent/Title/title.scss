@@ -27,19 +27,22 @@ $color: #000000;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        height: 16px;
-        width: 125px;
+        height: 20px;
+        width: 100px;
         background-repeat: no-repeat;
         background-size: contain;
-        background-image: url('./logo.png');
+        background-image: url('../../asset/image/logo.png');
 
         &-click {
             position: absolute;
-            height: 16px;
-            width: 16px;
-            left: 0;
-            top: 0;
-            color: transparent;
+            height: 10px;
+            width: 10px;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('../../asset/image/link.png');
         }
     }
 }

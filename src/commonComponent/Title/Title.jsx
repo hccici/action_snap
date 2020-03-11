@@ -2,7 +2,7 @@ import React from 'react';
 import style from './title.scss'
 function Title(props) {
     const goUrl=()=>{
-        window.open('https://www.popin.cc/action/privacy.html', '_blank')
+        window.open('https://www.popin.cc/home/privacy.html', '_blank')
     }
     return (
         <div className={style['title']}>{props.name}
