@@ -67,6 +67,13 @@ const modifySiteName = function (site) {
         return m1
     })
 }
+/* 扩展方法 */
+const bindMethod=function(fun1,fun2){
+    return function(){
+        fun1()
+        fun2()
+    }
+}
 export {
     getPrice,
     throttle,
@@ -74,5 +81,6 @@ export {
     isInView,
     getDevice,
     getDate,
-    modifySiteName
+    modifySiteName,
+    bindMethod
 }

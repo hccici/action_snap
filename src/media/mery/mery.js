@@ -4,7 +4,9 @@ import './config.js'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ImplantAll from '@normal/ImplantAll/ImplantAll.jsx'
-import { reportPageView } from '@report'
+//扩展上报方法
+// import './extendReport'
+import report from '@report'
 import './mery.css'
 //获取react工作区域
 var portList = document.querySelectorAll('.action_snap_entry')
@@ -25,7 +27,7 @@ portList.forEach(function (item, index) {
     );
   }
 })
-reportPageView()
+report.reportPageView()
 //报告版本号
 console.log('action_snap_render_mery_1.0')
 

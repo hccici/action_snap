@@ -52,8 +52,9 @@
         //为了匹配图片，使用图片src作为key值
         var src = item.querySelector('source:nth-child(2)').dataset.srcset
         src = src || ''
-        item = item.parentElement.parentElement
         var snap = '<div class="action_snap_entry" data-key="' + src + '"></div>'
+        item = item.parentElement.parentElement
+        // 这里有两个样式不同的插入区域，所以区分开后，加入不同的样式的入口
         var className = Array.prototype.slice.call(item.classList)[0]
         if (className === "product") {
             snap = '<div class="action_snap_entry" style="padding: 10px" data-key="' + src + '"></div>'

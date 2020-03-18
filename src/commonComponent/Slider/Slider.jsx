@@ -1,12 +1,12 @@
 import React from 'react'
 import style from './slider.scss'
-import { reportItemClick  } from '@report'
+import report from '@report'
 import { getPrice, modifySiteName } from '@commonMethods'
 import placeholder from '@image/placeholder.png'
 const Slider = React.forwardRef((props, ref) => {
     const { list, load } = props
     const handleClick = (item, index) => {
-        reportItemClick()
+        report.reportItemClick()
         window.open(item.url, '_blank')
     }
     return (

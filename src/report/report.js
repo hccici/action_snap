@@ -30,8 +30,10 @@ const reportItemIntersecting = (price) => {
         'send_to': gaId
     })
 }
-export {
-    reportPageView,
-    reportItemClick,
-    reportItemIntersecting
-}
+export default (function () {
+    return {
+        reportPageView,
+        reportItemClick,
+        reportItemIntersecting
+    }
+}())

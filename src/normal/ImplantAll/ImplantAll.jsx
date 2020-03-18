@@ -3,7 +3,7 @@ import Title from '@common/Title/Title.jsx'
 import Tags from '@common/Tags/Tags.jsx'
 import Slider from '@common/Slider/Slider.jsx'
 import { isInView, debounce, throttle } from '@commonMethods'
-import { reportItemIntersecting } from '@report'
+import report from '@report'
 function ImplantAll(props) {
   const name = window.actionSnapConfig.title
   const { data, index,className } = props
@@ -18,12 +18,12 @@ function ImplantAll(props) {
   useEffect(function () {
     if (isInView(sliderRef.current)) {
       setLoad(true)
-      reportItemIntersecting()
+      report.reportItemIntersecting()
     } else {
       const doS = debounce(function () {
         if (isInView(sliderRef.current)) {
           setLoad(true)
-          reportItemIntersecting()
+          report.reportItemIntersecting()
           window.removeEventListener('scroll', doS)
         }
       }, 300)
