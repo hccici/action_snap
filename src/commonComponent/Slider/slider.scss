@@ -22,6 +22,8 @@
 
         &-title1 {
             font-size: 12px;
+            transform-origin: center;
+    transform: scale(0.89);
             font-weight: 600;
             line-height: 1em;
             margin-top: 5px;
@@ -31,6 +33,8 @@
 
         &-title2 {
             font-size: 12px;
+            transform-origin: center;
+    transform: scale(0.89);
             line-height: 1em;
             margin-top: 3px;
         }

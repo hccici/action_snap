@@ -1,17 +1,16 @@
 $color: #000000;
 
 .title {
-    margin-top: 10px;
     /*     border-bottom: 1px solid $color;*/
-    padding-left: 15px;
+   /*  padding-left: 15px; */
     position: relative;
-    font-size: 16px;
+    font-size: 15px;
     color: $color;
     text-align: left;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.6em;
 
-    &::before {
+    /* &::before {
         display: block;
         content: "";
         position: absolute;
@@ -20,7 +19,7 @@ $color: #000000;
         transform: translateY(-30%);
         border: 6px solid transparent;
         border-top: 10px solid $color;
-    }
+    } */
 
     &-logo {
         position: absolute;

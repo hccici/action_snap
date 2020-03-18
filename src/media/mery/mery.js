@@ -5,6 +5,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ImplantAll from '@normal/ImplantAll/ImplantAll.jsx'
 import { reportPageView } from '@report'
+import './mery.css'
 //获取react工作区域
 var portList = document.querySelectorAll('.action_snap_entry')
 //从window中取出数据
@@ -19,14 +20,14 @@ portList.forEach(function (item, index) {
   var data = actionSnapData[key]
   if (data) {
     ReactDOM.render(
-      <ImplantAll data={data} index={index}></ImplantAll>,
+      <ImplantAll data={data} index={index} className='action_snap_box'></ImplantAll>,
       item
     );
   }
 })
 reportPageView()
 //报告版本号
-console.log('mery_1.0')
+console.log('action_snap_render_mery_1.0')
 
 
 

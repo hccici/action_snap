@@ -7,14 +7,16 @@
     font-size: 12px;
     &::-webkit-scrollbar{display:none}
     &-item {
+        font-size: 12px;
         padding: 6px 19px;
         border-radius: 15px;
         background: #f3f3f3;
         margin-right: 5px;
-        font-weight: 800;
         white-space: nowrap;
         &_selected {
             background: #e9d1aa;
+            color: #ffffff;
+            font-weight: 800;
         }
     }
 }

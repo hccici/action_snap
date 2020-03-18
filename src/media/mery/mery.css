@@ -1,0 +1,9 @@
+.action_snap_box {
+    padding: 14px 0;
+    margin: 14px 0px;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+}
+.src-commonComponent-Tags-tags__tags-item_selected{
+    background: #ea6a7a
+}

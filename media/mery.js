@@ -10,7 +10,7 @@
     }
     /* 开始工作 */
     // 1、开关
-    var toggle = false //true为开启限制
+    var toggle = true //true为开启限制，正式上线的时候才能设置为false
     if (toggle) {
         if (location.href.indexOf('action_snap=true') === -1) {
             return

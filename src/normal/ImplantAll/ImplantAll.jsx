@@ -6,7 +6,7 @@ import { isInView, debounce, throttle } from '@commonMethods'
 import { reportItemIntersecting } from '@report'
 function ImplantAll(props) {
   const name = window.actionSnapConfig.title
-  const { data, index } = props
+  const { data, index,className } = props
   //创建当前选择的state
   const [curSelect, setCurSelect] = useState(0)
   const handleTagSelect = useCallback(index => {
@@ -31,7 +31,7 @@ function ImplantAll(props) {
     }
   }, [])
   return (
-    <div id={`action_snap_box_${index}`}>
+    <div className={className||''} id={`action_snap_box_${index}`}>
       <Title name={name}></Title>
       <Tags list={data} selectIndex={curSelect} onTagSelect={handleTagSelect}></Tags>
       <Slider ref={sliderRef} list={data[curSelect].items} load={load}></Slider>
