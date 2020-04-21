@@ -1,34 +1,46 @@
 /* eslint-disable */
-import actionSnapGa from './ga.js'
+import actionSnapGa from './analytics.js'
 import { logReport } from './discovery.js'
-const gaId = window.actionSnapConfig.gaId
+import {getDevice} from '@commonMethods'
+
+const device=getDevice()
+const site=window.actionSnapECConfig.site
 // 功能显示上报
 const reportPageView = () => {
     logReport({
         type: 'pv'
     })
-    actionSnapGa('event', 'page_view', {
-        'send_to': gaId
-    })
+    actionSnapGa('send', {
+        hitType: 'event',
+        eventCategory: site,
+        eventAction: 'pv',
+        eventLabel: device
+      })
 }
 // 商品点击上报
-const reportItemClick = (price) => {
+const reportItemClick = () => {
     logReport({
         type: "click"
     })
-    actionSnapGa('event', 'click_item', {
-        'send_to': gaId
-    })
+    actionSnapGa('send', {
+        hitType: 'event',
+        eventCategory: site,
+        eventAction: 'click',
+        eventLabel: device
+      })
 }
 
 // 广告位曝光上报
-const reportItemIntersecting = (price) => {
+const reportItemIntersecting = () => {
     logReport({
         type: "imp"
     })
-    actionSnapGa('event', 'snap_itemImp', {
-        'send_to': gaId
-    })
+    actionSnapGa('send', {
+        hitType: 'event',
+        eventCategory: site,
+        eventAction: 'imp',
+        eventLabel: device
+      })
 }
 export default (function () {
     return {

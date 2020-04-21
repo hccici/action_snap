@@ -1,4 +1,6 @@
 /* eslint-disable */
+//报告版本号
+console.log('action_snap_render_mery_1.2')
 //引入全局配置，一定在在很前面
 import './config.js'
 import React from 'react'
@@ -8,6 +10,7 @@ import ImplantAll from '@normal/ImplantAll/ImplantAll.jsx'
 // import './extendReport'
 import report from '@report'
 import './mery.css'
+
 //获取react工作区域
 var portList = document.querySelectorAll('.action_snap_entry')
 //从window中取出数据
@@ -28,8 +31,7 @@ portList.forEach(function (item, index) {
   }
 })
 report.reportPageView()
-//报告版本号
-console.log('action_snap_render_mery_1.0')
+
 
 
 
